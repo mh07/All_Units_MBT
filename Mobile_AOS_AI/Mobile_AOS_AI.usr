@@ -44,9 +44,14 @@ Database=
 File Content=
 Insight=
 Mobile=
+SAP NWBC Desktop=
+SAP=
+SAPUI5=
+SAPWebExt=
 Windows Applications=
 TEA=
 Web=
+WPF=
 XML=
 
 [ExtraFiles]
