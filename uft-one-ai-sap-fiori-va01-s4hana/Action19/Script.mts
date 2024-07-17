@@ -7,6 +7,7 @@ AIUtil("search").Click
 AIUtil("text_box", "Search").SetText "post incoming payments"
 AIUtil("search").Click
 AppContext.Sync																			'Wait for the browser to stop spinning
+wait 1
 
 counter = 0
 Do
