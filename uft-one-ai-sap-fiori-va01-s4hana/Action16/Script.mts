@@ -14,25 +14,30 @@ AIUtil.FindTextBlock("Picking").Click
 'Next
 
 AIUtil.Context.Freeze
-XtoClick = (AIUtil.FindTextBlock("SLoc").GetObjectProperty ("width") /2)
-YtoClick = (AIUtil.FindTextBlock("SLoc").GetObjectProperty ("y") - (AIUtil.FindTextBlock("1710").GetObjectProperty ("y") + (AIUtil.FindTextBlock("1710").GetObjectProperty ("height")/2))) * -1
-'print "Click at " & XtoClick & ", " & YtoClick
-AIUtil.FindTextBlock("SLoc").Click XtoClick, YtoClick
+
+'XtoClick = (AIUtil.FindTextBlock("SLoc").GetObjectProperty ("width") /2)
+'YtoClick = (AIUtil.FindTextBlock("SLoc").GetObjectProperty ("y") - (AIUtil.FindTextBlock("1710").GetObjectProperty ("y") + (AIUtil.FindTextBlock("1710").GetObjectProperty ("height")/2))) * -1
+''print "Click at " & XtoClick & ", " & YtoClick
+'AIUtil.FindTextBlock("SLoc").Click XtoClick, YtoClick
+
 'The below wait statement is to allow the application to register the click and make the cell editable
 wait 1
 set objSendKey=CreateObject("WScript.shell")
+Browser("Outbound Delivery 80003619").Page("Outbound Delivery 80003619").SAPFrame("Outbound Delivery 80003619").WebList("InputField").Click 
 
 ''Storage location = 171A
 objSendKey.SendKeys "171A"
 
-XtoClick = (AIUtil.FindTextBlock("Picked Qty").GetObjectProperty ("width") /2)
-'print "Click at " & XtoClick & ", " & YtoClick
-AIUtil.FindTextBlock("Picked Qty").Click XtoClick, YtoClick
+'XtoClick = (AIUtil.FindTextBlock("Picked Qty").GetObjectProperty ("width") /2)
+''print "Click at " & XtoClick & ", " & YtoClick
+'AIUtil.FindTextBlock("Picked Qty").Click XtoClick, YtoClick
 'The below wait statement is to allow the application to register the click and make the cell editable
 wait 1
 ''PICKING QUANTITY = same value ordered
-objSendKey.SendKeys DataTable.Value("OrderQuantity", "05_va01_order_details")
-AIUtil.Context.UnFreeze
+Browser("Outbound Delivery 80003619").Page("Outbound Delivery 80003619").SAPFrame("Outbound Delivery 80003619_2").WebList("InputField").Click
+
+objSendKey.SendKeys "1"
+'AIUtil.Context.UnFreeze
 
 AIUtil.FindTextBlock("Post Goods Issue").Click
 AIUtil("check_mark").Click
