@@ -1,4 +1,6 @@
-﻿AIUtil.SetContext Browser("creationtime:=0")
+﻿Dim MyDate
+MyDate = Date   ' MyDate contains the current system date.
+AIUtil.SetContext Browser("creationtime:=0")
 AIUtil("button", "", micWithAnchorBelow, AIUtil.FindTextBlock("Personnel Files")).Click
 AIUtil.FindTextBlock("Request Forms", micFromBottom, 1).Click
 AIUtil("plus").Click
@@ -30,10 +32,9 @@ AIUtil.FindTextBlock("Sienna Miller").Click
 AIUtil("button", "Next").Click
 AIUtil("button", "Next").Click
 AIUtil("check_box", "Send notification when the workflow starts").SetState "On"
-Dim MyDate
-MyDate = Date   ' MyDate contains the current system date.
+
 AIUtil("text_box", "Launch on").SetText MyDate
 AIUtil("button", "Finish").Click
 
-Parameter("oFormID") = AIUtil.FindTextBlock(micAnyText, micWithAnchorOnRight, AIUtil("close")).GetText
-msgbox Parameter("oFormID")
+Parameter("oFormID") = AIUtil.FindText(micAnyText, micWithAnchorOnRight, AIUtil("close")).GetText
+
