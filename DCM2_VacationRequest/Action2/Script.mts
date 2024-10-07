@@ -34,3 +34,6 @@ Dim MyDate
 MyDate = Date   ' MyDate contains the current system date.
 AIUtil("text_box", "Launch on").SetText MyDate
 AIUtil("button", "Finish").Click
+
+Parameter("oFormID") = AIUtil.FindTextBlock(micAnyText, micWithAnchorOnRight, AIUtil("close")).GetText
+msgbox Parameter("oFormID")
