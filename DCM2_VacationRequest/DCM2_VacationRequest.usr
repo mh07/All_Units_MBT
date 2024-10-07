@@ -17,10 +17,6 @@ DCM2_SubmitRequest_UFT_AI=Action2\Script.mts
 DCM2_Logout_UFT_AI=Action3\Script.mts
 DCM2_ApproveRequest_UFT_AI=Action4\Script.mts
 DCM2_ViewApproval_UFT_AI=Action5\Script.mts
-Copy of DCM2_Login_UFT_AI=Action6\Script.mts
-Copy 2 of DCM2_Login_UFT_AI=Action9\Script.mts
-Copy of DCM2_Logout_UFT_AI=Action10\Script.mts
-Copy 2 of DCM2_Logout_UFT_AI=Action11\Script.mts
 
 [VuserProfiles]
 Profiles=Default Profile
@@ -77,15 +73,3 @@ Action4\ObjectRepository.bdb=
 Action5\Script.mts=
 Action5\Resource.mtr=
 Action5\ObjectRepository.bdb=
-Action6\Script.mts=
-Action6\Resource.mtr=
-Action6\ObjectRepository.bdb=
-Action9\Script.mts=
-Action9\Resource.mtr=
-Action9\ObjectRepository.bdb=
-Action10\Script.mts=
-Action10\Resource.mtr=
-Action10\ObjectRepository.bdb=
-Action11\Script.mts=
-Action11\Resource.mtr=
-Action11\ObjectRepository.bdb=
