@@ -14,8 +14,8 @@ AIUtil.FindTextBlock("Pinned columns").Click
 'AIUtil.FindTextBlock(Parameter("iFormID")).Highlight
 
 AIUtil.Table.Cell(1, 2).Highlight
-AIUtil.Table.Cell(1, 8).Highlight
-topCell= AIUtil.Table.Cell(1, 8).GetText
+AIUtil.Table.Cell(1, 6).Highlight
+topCell= AIUtil.Table.Cell(1, 6).GetText
 If topCell = "Approved" Then Reporter.ReportEvent 0, "Request Approved", "The request was approved successfully." Else Reporter.ReportEvent 1, "Request Approved", "The request was approval step failed, actual result: " + topCell End If
 
 AIUtil("gear_settings").Click
