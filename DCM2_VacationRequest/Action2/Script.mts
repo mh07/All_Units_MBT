@@ -3,6 +3,7 @@ MyDate = Date   ' MyDate contains the current system date.
 AIUtil.SetContext Browser("creationtime:=0")
 AIUtil("button", "", micWithAnchorBelow, AIUtil.FindTextBlock("Personnel Files")).Click
 AIUtil.FindTextBlock("Request Forms", micFromBottom, 1).Click
+wait 2
 AIUtil("plus").Click
 AIUtil.FindTextBlock("Add").Click
 AIUtil.FindTextBlock("Smart Vacation Request", micFromBottom, 1).Hover
@@ -36,5 +37,10 @@ AIUtil("check_box", "Send notification when the workflow starts").SetState "On"
 AIUtil("text_box", "Launch on").SetText MyDate
 AIUtil("button", "Finish").Click
 
-Parameter("oFormID") = AIUtil.FindText(micAnyText, micWithAnchorOnRight, AIUtil("close")).GetText
+oNumber = AIUtil.FindText(micAnyText, micWithAnchorOnRight, AIUtil("close")).GetText
 
+words = Split(oNumber, " ")
+B = words(0) & " " & words(1) & " " & words(2) & " " & words(3) & " " & words(4) & " " & words(5)
+C = Replace(B, """", "")
+Parameter("oFormID") = C
+msgbox Parameter("oFormID")
