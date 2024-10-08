@@ -43,4 +43,4 @@ words = Split(oNumber, " ")
 B = words(0) & " " & words(1) & " " & words(2) & " " & words(3) & " " & words(4) & " " & words(5)
 C = Replace(B, """", "")
 Parameter("oFormID") = C
-msgbox Parameter("oFormID")
+Print Parameter("oFormID")
