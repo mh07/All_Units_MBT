@@ -26,6 +26,9 @@ AIUtil("check_box", micAnyText, micWithAnchorAbove, AIUtil.FindTextBlock("Name")
 AIUtil("dot_menu").Click
 AIUtil.FindTextBlock("Send to workflow").Click
 AIUtil.FindText("Vacation Request", micWithAnchorOnLeft, AIUtil.FindTextBlock("Send to Wworkflow")).Click
+vrNumber= AIUtil.FindTextBlock(micAnyText, micWithAnchorOnLeft, AIUtil.FindTextBlock("HR Vacation Request", micFromTop, 1)).GetText
+Parameter("oFormID")= vrNumber
+Print Parameter("oFormID")
 AIUtil("button", "Next").Click
 AIUtil("combobox", "Manager").SetText "sienna miller"
 AIUtil.FindTextBlock("Sienna Miller").Click
@@ -37,10 +40,10 @@ AIUtil("check_box", "Send notification when the workflow starts").SetState "On"
 AIUtil("text_box", "Launch on").SetText MyDate
 AIUtil("button", "Finish").Click
 
-oNumber = AIUtil.FindText(micAnyText, micWithAnchorOnRight, AIUtil("close")).GetText
-
-words = Split(oNumber, " ")
-B = words(0) & " " & words(1) & " " & words(2) & " " & words(3) & " " & words(4) & " " & words(5)
-C = Replace(B, """", "")
-Parameter("oFormID") = C
-Print Parameter("oFormID")
+'oNumber = AIUtil.FindText(micAnyText, micWithAnchorOnRight, AIUtil("close")).GetText
+'
+'words = Split(oNumber, " ")
+'B = words(0) & " " & words(1) & " " & words(2) & " " & words(3) & " " & words(4) & " " & words(5)
+'C = Replace(B, """", "")
+'Parameter("oFormID") = C
+'Print Parameter("oFormID")
