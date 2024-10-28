@@ -2,6 +2,8 @@
 MyDate = Date   ' MyDate contains the current system date.
 AIUtil.SetContext Browser("creationtime:=0")
 AIUtil("button", "", micWithAnchorBelow, AIUtil.FindTextBlock("Personnel Files")).Click
+
+AIUtil("right_triangle", micAnyText, micWithAnchorBelow, AIUtil.FindTextBlock("Personnel", micFromBottom, 1)).Click
 AIUtil.FindTextBlock("Request Forms", micFromBottom, 1).Click
 wait 2
 AIUtil("plus").Click
@@ -12,13 +14,14 @@ Browser("Request Forms - Documentum").Page("Request Forms - Documentum").WebChec
 AIUtil("button", "Continue").Click
 'AIUtil("combobox", "Employee td1234").Select "029501"
 
+AIUtil.SetContext Browser("creationtime:=0")
 AIUtil("down_triangle", micAnyText, micWithAnchorOnLeft, AIUtil.FindTextBlock("Employee td1234")).Click
-AIUtil.FindText("029501", micFromTop, 5).Click
+AIUtil.FindText("029501", micFromRight, 1).Click
 AIUtil.FindTextBlock(micAnyText, micWithAnchorAbove, AIUtil.FindTextBlock("Name")).Click
 AIUtil("down_triangle", micAnyText, micWithAnchorOnLeft, AIUtil.FindTextBlock("First Name")).Click
 AIUtil.FindText("Victor").Click
 AIUtil("down_triangle", micAnyText, micWithAnchorOnLeft, AIUtil.FindTextBlock("Last Na me")).Click
-AIUtil.FindText("Dylan", micFromTop, 6).Click
+AIUtil.FindText("Dylan", micFromRight, 1).Click
 AIUtil("down_triangle", micAnyText, micWithAnchorOnLeft, AIUtil.FindTextBlock("Position")).Click
 AIUtil.FindText("Shipping Clerk").Click
 AIUtil("button", "Continue").Click
