@@ -17,10 +17,14 @@ AIUtil.FindTextBlock("Request Forms", micFromLeft, 1).Click
 
 AIUtil.FindTextBlock(micAnyText, micWithAnchorAbove, AIUtil.FindTextBlock("Name")).Highlight
 AIUtil.FindTextBlock(micAnyText, micWithAnchorAbove, AIUtil.FindTextBlock("Status")).Highlight
+AIUtil.FindTextBlock(micAnyText, micWithAnchorAbove, AIUtil.FindTextBlock("Status")).CheckExists True
 topCell = AIUtil.FindTextBlock(micAnyText, micWithAnchorAbove, AIUtil.FindTextBlock("Status")).GetText
 
-If topCell = "Approved" Then Reporter.ReportEvent 0, "Request Approved", "The request was approved successfully." Else Reporter.ReportEvent 1, "Request Approved", "The request was approval step failed, actual result: " + topCell End If
-
+If topCell = "Approved" Then 
+	Reporter.ReportEvent 0, "Request Approved", "The request was approved successfully." 
+Else 
+	Reporter.ReportEvent 1, "Request Approved", "The request was approval step failed, actual result: " + topCell 
+End If
 
 'StatusText = AIUtil.FindTextBlock(micAnyText, micWithAnchorOnLeft, AIUtil.FindText("ePersonnel File ", micFromTop, counter)).GetText
 'AIUtil.FindTextBlock("Approved", micWithAnchorBelow, AIUtil.FindTextBlock(Parameter("iFormID"))).Highlight
