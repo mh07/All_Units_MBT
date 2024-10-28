@@ -1,10 +1,10 @@
 ﻿AIUtil.SetContext Browser("creationtime:=0")
 AIUtil.FindTextBlock("Personnel Files").Click
-AIUtil("right_triangle", micAnyText, micWithAnchorBelow, AIUtil.FindTextBlock("Personnel", micFromBottom, 1)).Click
-AIUtil.FindTextBlock("Request Forms", micFromBottom, 1).Click
-AIUtil("gear_settings").Click
-AIUtil("gear_settings").Click
-AIUtil.FindTextBlock("Pinned columns").Click
+rightTriangle = AIUtil("right_triangle", micAnyText, micWithAnchorBelow, AIUtil.FindTextBlock("Personnel", micFromBottom, 1)).Exist
+If rightTriangle Then
+	AIUtil("right_triangle", micAnyText, micWithAnchorBelow, AIUtil.FindTextBlock("Personnel", micFromBottom, 1)).Click
+End If
+AIUtil.FindTextBlock("Request Forms", micFromLeft, 1).Click
 
 'counter = 0
 'AIUtil.Context.SetBrowserScope(BrowserWindow)
@@ -14,14 +14,13 @@ AIUtil.FindTextBlock("Pinned columns").Click
 'Loop While AIUtil.FindTextBlock(Parameter("iFormID")).Exist(0) = FALSE
 'AIUtil.FindTextBlock(Parameter("iFormID")).Highlight
 
-AIUtil.Table.Cell(1, 2).Highlight
-AIUtil.Table.Cell(1, 8).Highlight
-topCell= AIUtil.Table.Cell(1, 8).GetText
+
+AIUtil.FindTextBlock(micAnyText, micWithAnchorAbove, AIUtil.FindTextBlock("Name")).Highlight
+AIUtil.FindTextBlock(micAnyText, micWithAnchorAbove, AIUtil.FindTextBlock("Status")).Highlight
+topCell = AIUtil.FindTextBlock(micAnyText, micWithAnchorAbove, AIUtil.FindTextBlock("Status")).GetText
+
 If topCell = "Approved" Then Reporter.ReportEvent 0, "Request Approved", "The request was approved successfully." Else Reporter.ReportEvent 1, "Request Approved", "The request was approval step failed, actual result: " + topCell End If
 
-AIUtil("gear_settings").Click
-AIUtil("gear_settings").Click
-AIUtil.FindText("List").Click
 
 'StatusText = AIUtil.FindTextBlock(micAnyText, micWithAnchorOnLeft, AIUtil.FindText("ePersonnel File ", micFromTop, counter)).GetText
 'AIUtil.FindTextBlock("Approved", micWithAnchorBelow, AIUtil.FindTextBlock(Parameter("iFormID"))).Highlight

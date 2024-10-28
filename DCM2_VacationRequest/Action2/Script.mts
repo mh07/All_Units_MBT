@@ -3,7 +3,10 @@ MyDate = Date   ' MyDate contains the current system date.
 AIUtil.SetContext Browser("creationtime:=0")
 AIUtil("button", "", micWithAnchorBelow, AIUtil.FindTextBlock("Personnel Files")).Click
 
-AIUtil("right_triangle", micAnyText, micWithAnchorBelow, AIUtil.FindTextBlock("Personnel", micFromBottom, 1)).Click
+rightTriangle = AIUtil("right_triangle", micAnyText, micWithAnchorBelow, AIUtil.FindTextBlock("Personnel", micFromBottom, 1)).Exist
+If rightTriangle Then
+	AIUtil("right_triangle", micAnyText, micWithAnchorBelow, AIUtil.FindTextBlock("Personnel", micFromBottom, 1)).Click
+End If
 AIUtil.FindTextBlock("Request Forms", micFromBottom, 1).Click
 wait 2
 AIUtil("plus").Click
