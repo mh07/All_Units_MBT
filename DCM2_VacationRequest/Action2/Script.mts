@@ -6,8 +6,9 @@ AIUtil.FindTextBlock("Request Forms", micFromBottom, 1).Click
 wait 2
 AIUtil("plus").Click
 AIUtil.FindTextBlock("Add").Click
+AIUtil.SetContext Browser("creationtime:=0")
 AIUtil.FindTextBlock("Smart Vacation Request", micFromBottom, 1).Hover
-AIUtil("check_box", "Smart Vacation Request").SetState "On"
+Browser("Request Forms - Documentum").Page("Request Forms - Documentum").WebCheckBox("Item selection").Set "ON" @@ script infofile_;_ZIP::ssf3.xml_;_
 AIUtil("button", "Continue").Click
 'AIUtil("combobox", "Employee td1234").Select "029501"
 
