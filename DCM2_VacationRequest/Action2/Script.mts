@@ -29,7 +29,7 @@ AIUtil("button", "Edit later").Click
 AIUtil("check_box", micAnyText, micWithAnchorAbove, AIUtil.FindTextBlock("Name")).SetState "On"
 AIUtil("dot_menu").Click
 AIUtil.FindTextBlock("Send to workflow").Click
-AIUtil.FindText("Vacation Request", micWithAnchorOnLeft, AIUtil.FindTextBlock("Send to Wworkflow")).Click
+AIUtil.FindTextBlock("HR Vacation").Click
 vrNumber= AIUtil.FindTextBlock(micAnyText, micWithAnchorOnLeft, AIUtil.FindTextBlock("HR Vacation Request", micFromTop, 1)).GetText
 Parameter("oFormID")= vrNumber
 Print Parameter("oFormID")
