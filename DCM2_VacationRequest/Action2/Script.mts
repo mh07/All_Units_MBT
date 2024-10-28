@@ -27,7 +27,9 @@ AIUtil.FindText("Shipping Clerk").Click
 AIUtil("button", "Continue").Click
 AIUtil("button", "Edit later").Click
 AIUtil("check_box", micAnyText, micWithAnchorAbove, AIUtil.FindTextBlock("Name")).SetState "On"
+wait 1
 AIUtil("dot_menu").Click
+
 AIUtil.FindTextBlock("Send to workflow").Click
 AIUtil.FindText("Request", micFromRight, 1).Click
 
