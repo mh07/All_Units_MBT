@@ -3,14 +3,14 @@ MyDate = Date   ' MyDate contains the current system date.
 AIUtil.SetContext Browser("creationtime:=0")
 AIUtil("button", "", micWithAnchorBelow, AIUtil.FindTextBlock("Personnel Files")).Click
 
-rightTriangle = AIUtil("right_triangle", micAnyText, micWithAnchorBelow, AIUtil.FindTextBlock("Personnel", micFromBottom, 1)).Exist
-If rightTriangle Then
-	AIUtil("right_triangle", micAnyText, micWithAnchorBelow, AIUtil.FindTextBlock("Personnel", micFromBottom, 1)).Click
-End If
-AIUtil.FindTextBlock("Request Forms", micFromBottom, 1).Click
-wait 2
+'rightTriangle = AIUtil("right_triangle", micAnyText, micWithAnchorBelow, AIUtil.FindTextBlock("Personnel", micFromBottom, 1)).Exist
+'If rightTriangle Then
+'	AIUtil("right_triangle", micAnyText, micWithAnchorBelow, AIUtil.FindTextBlock("Personnel", micFromBottom, 1)).Click
+'End If
+AIUtil.FindTextBlock("Request Forms", micFromRight, 1).Click
+'wait 2
 AIUtil("plus").Click
-AIUtil.FindTextBlock("Add").Click
+AIUtil.FindText("Add", micFromTop, 1).Click
 AIUtil.SetContext Browser("creationtime:=0")
 AIUtil.FindTextBlock("Smart Vacation Request", micFromBottom, 1).Hover
 Browser("Request Forms - Documentum").Page("Request Forms - Documentum").WebCheckBox("Item selection").Set "ON" @@ script infofile_;_ZIP::ssf3.xml_;_
