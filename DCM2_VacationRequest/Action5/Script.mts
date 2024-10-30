@@ -1,10 +1,10 @@
 ﻿AIUtil.SetContext Browser("creationtime:=0")
 AIUtil.FindTextBlock("Personnel Files").Click
-rightTriangle = AIUtil("right_triangle", micAnyText, micWithAnchorBelow, AIUtil.FindTextBlock("Personnel", micFromBottom, 1)).Exist
-If rightTriangle Then
-	AIUtil("right_triangle", micAnyText, micWithAnchorBelow, AIUtil.FindTextBlock("Personnel", micFromBottom, 1)).Click
-End If
-AIUtil.FindTextBlock("Request Forms", micFromLeft, 1).Click
+'rightTriangle = AIUtil("right_triangle", micAnyText, micWithAnchorBelow, AIUtil.FindTextBlock("Personnel", micFromBottom, 1)).Exist
+'If rightTriangle Then
+'	AIUtil("right_triangle", micAnyText, micWithAnchorBelow, AIUtil.FindTextBlock("Personnel", micFromBottom, 1)).Click
+'End If
+AIUtil.FindTextBlock("Request Forms", micFromRight, 1).Click
 
 'counter = 0
 'AIUtil.Context.SetBrowserScope(BrowserWindow)
@@ -23,7 +23,7 @@ topCell = AIUtil.FindTextBlock(micAnyText, micWithAnchorAbove, AIUtil.FindTextBl
 If topCell = "Approved" Then 
 	Reporter.ReportEvent 0, "Request Approved", "The request was approved successfully." 
 Else 
-	Reporter.ReportEvent 1, "Request Approved", "The request was approval step failed, actual result: " + topCell 
+	Reporter.ReportEvent 1, "Request Approved", "The request approval step failed, actual result: " + topCell 
 End If
 
 'StatusText = AIUtil.FindTextBlock(micAnyText, micWithAnchorOnLeft, AIUtil.FindText("ePersonnel File ", micFromTop, counter)).GetText
