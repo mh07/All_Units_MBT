@@ -1,7 +1,7 @@
 ﻿Dim MyDate
 MyDate = Date   ' MyDate contains the current system date.
 AIUtil.SetContext Browser("creationtime:=0")
-AIUtil("button", "", micWithAnchorBelow, AIUtil.FindTextBlock("Personnel Files")).Click
+AIUtil.FindText("Personnel Files", micFromTop, 1).Click
 
 'rightTriangle = AIUtil("right_triangle", micAnyText, micWithAnchorBelow, AIUtil.FindTextBlock("Personnel", micFromBottom, 1)).Exist
 'If rightTriangle Then
@@ -23,7 +23,7 @@ AIUtil.FindText("029501", micFromRight, 1).Click
 AIUtil.FindTextBlock(micAnyText, micWithAnchorAbove, AIUtil.FindTextBlock("Name")).Click
 AIUtil("down_triangle", micAnyText, micWithAnchorOnLeft, AIUtil.FindTextBlock("First Name")).Click
 AIUtil.FindText("Victor").Click
-AIUtil("down_triangle", micAnyText, micWithAnchorOnLeft, AIUtil.FindTextBlock("Last Na me")).Click
+AIUtil("down_triangle", micAnyText, micWithAnchorOnLeft, AIUtil.FindTextBlock("Last Name")).Click
 AIUtil.FindText("Dylan", micFromRight, 1).Click
 AIUtil("down_triangle", micAnyText, micWithAnchorOnLeft, AIUtil.FindTextBlock("Position")).Click
 AIUtil.FindText("Shipping Clerk").Click
