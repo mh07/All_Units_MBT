@@ -1,4 +1,5 @@
-﻿AIUtil.FindTextBlock("Vacation Request - Approval Requested", micFromTop, 1).Click
+﻿AIUtil.SetContext Browser("creationtime:=0")
+AIUtil.FindTextBlock("Vacation Request - Approval Requested", micFromTop, 1).Click
 AIUtil("button", "Denied").Click
 AIUtil("text_box", "Note").Type "this request is denied"
 AIUtil("button", "Next").Click
