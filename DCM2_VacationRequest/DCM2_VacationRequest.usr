@@ -21,6 +21,7 @@ Copy of DCM2_Login_UFT_AI=Action6\Script.mts
 Copy of DCM2_Logout_UFT_AI=Action7\Script.mts
 Copy 2 of DCM2_Login_UFT_AI=Action8\Script.mts
 Copy 2 of DCM2_Logout_UFT_AI=Action9\Script.mts
+DCM2_DenyRequest_UFT_AI=Action11\Script.mts
 
 [VuserProfiles]
 Profiles=Default Profile
@@ -89,3 +90,6 @@ Action8\ObjectRepository.bdb=
 Action9\Script.mts=
 Action9\Resource.mtr=
 Action9\ObjectRepository.bdb=
+Action11\Script.mts=
+Action11\Resource.mtr=
+Action11\ObjectRepository.bdb=
